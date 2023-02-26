@@ -5,6 +5,7 @@
 
 Console.Clear();
 
+
 int[] array = FillArray(12,-9,9);
 
 Console.WriteLine($"В массиве: [{string.Join(" ", array)}] сумма положительных = {GetSumPossitiveByArray(array)}, сумма отрицательных = {GetSumNegativeByArray(array)}");
