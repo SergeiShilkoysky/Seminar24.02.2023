@@ -5,7 +5,6 @@
 
 int[] array = FillArray(5, 6, 345);
 
-
 Console.WriteLine($"В массиве: [{string.Join(" ", array)}]");
 Console.WriteLine($"Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
