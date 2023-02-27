@@ -1,41 +1,53 @@
-﻿// Задача 38: Задайте clear. Найдите разницу между максимальным и минимальным элементов массива.
-// [3 7 22 2 78] -> 76
+﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным
+// элементов массива.  /  [3 7 22 2 78] -> 76
 
 
-int[] ArrayInit(int size)
+double[] ArrayInit(int size)
 {
-    int[] array = new int[size];
+    double[] array = new double[size];
     Random rnd = new Random();
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.Next(0, 20);
+        array[i] = rnd.NextDouble()*100;
     }
     return array;
 }
-
-int FindMax(int[] array)
+ double FindMaxMin(double[] array)
 {
+    double result = 0;
     foreach (int i in array)
     {
-        int max = array[i];
-        if (i > max) { max = i; }
-        return max;
+        result = array.Max() - array.Min();
     }
+    return result;
 }
-int FindMin(int[] array)
+void Print(double[] array)
 {
-    foreach (int i in array)
-    {
-        int min = array[i];
-        if (i < min) { min = i; }
-        return min;
-    }
-}
-void Print(int[] array)
-{
-    Console.WriteLine($"[{string.Join(",", array)}]");
+    Console.WriteLine($"[{string.Join(", ", array)}]");
 }
 
-int[] array = ArrayInit(5);
+double [] array = ArrayInit(4);
+double [] array1 = new double [] {3, 7, 22, 2, 78};
+Console.WriteLine();
 Print(array);
-Console.WriteLine($"в указанном массиве максимальное значение {FindMax(array)} - минимальное {FindMin(array)} = {FindMax(array) - FindMin(array)}");
+Console.WriteLine($"в указанном массиве  максимальное {array.Max()} - минимальное {array.Min()}  = {FindMaxMin(array)}");
+Console.WriteLine();
+Print(array1);
+Console.WriteLine($"в  массиве  максимальное {array1.Max()} - минимальное {array1.Min()} = {FindMaxMin(array1)}");
+Console.WriteLine();
+/*
+int GetDiffMinMaxNumInArrInt(int[] arr)
+{
+    int result = arr.Max() - arr.Min();
+    return result;
+}
+int[] arr1 = new int[] {3, 7, 22, 2, 78};
+void PrintArr(int[] arr)
+{
+    Console.Write("[");
+    Console.Write(string.Join(", ", arr));
+    Console.WriteLine("]");
+}
+PrintArr(arr1);
+Console.WriteLine($"Разность максимального и минимального числа = {GetDiffMinMaxNumInArrInt(arr1)}");
+*/
