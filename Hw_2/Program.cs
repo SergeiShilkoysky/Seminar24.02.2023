@@ -2,7 +2,7 @@
 // [3, 7, 23, 12] -> 19  /  [-4, -6, 89, 6] -> 0
 
 
-int[] arrayInit(int size)
+int[] ArrayInit(int size)
 {
     int[] array = new int[size];
     Random rnd = new Random();
@@ -13,21 +13,31 @@ int[] arrayInit(int size)
     return array;
 }
 
-int sumElementOddPosition(int[] array)
+int SumElementOddPosition(int[] Inarray)
 {
     int result = 0;
     for (int i = 1; i < array.Length; i+=2)
     {
        // if (array[i] % 2 == 1) result++;
        result += array[i];
+    foreach(int element in inputArray){
+        result += element > 0 ? element : 0;    
+         // if(element > 0) 
+        //  result += element;
+    }
+    return result;
+
+
+
+
     }
     return result;
 }
-void print(int[] array)
+void Print(int[] array)
 {
     Console.WriteLine($"[{string.Join(",", array)}]");
 }
 
-int[] array = arrayInit(6);
-print(array);
-Console.WriteLine($"в указанном массиве сумма элементов на нечетных позициях = {sumElementOddPosition(array)}");
+int[] array = ArrayInit(6);
+Print(array);
+Console.WriteLine($"в указанном массиве сумма элементов на нечетных позициях = {SumElementOddPosition(array)}");
