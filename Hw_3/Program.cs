@@ -35,19 +35,3 @@ Console.WriteLine();
 Print(array1);
 Console.WriteLine($"в  массиве  максимальное {array1.Max()} - минимальное {array1.Min()} = {FindMaxMin(array1)}");
 Console.WriteLine();
-/*
-int GetDiffMinMaxNumInArrInt(int[] arr)
-{
-    int result = arr.Max() - arr.Min();
-    return result;
-}
-int[] arr1 = new int[] {3, 7, 22, 2, 78};
-void PrintArr(int[] arr)
-{
-    Console.Write("[");
-    Console.Write(string.Join(", ", arr));
-    Console.WriteLine("]");
-}
-PrintArr(arr1);
-Console.WriteLine($"Разность максимального и минимального числа = {GetDiffMinMaxNumInArrInt(arr1)}");
-*/
