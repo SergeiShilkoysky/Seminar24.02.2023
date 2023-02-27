@@ -1,8 +1,8 @@
-﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+﻿// Задача 38: Задайте clear. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
 
-int[] arrayInit(int size)
+int[] ArrayInit(int size)
 {
     int[] array = new int[size];
     Random rnd = new Random();
@@ -13,21 +13,29 @@ int[] arrayInit(int size)
     return array;
 }
 
-int diffMaxMinElement(int[] array)
+int FindMax(int[] array)
 {
-    int result = 0;
-    for (int i = 1; i < array.Length; i+=2)
+    foreach (int i in array)
     {
-       // if (array[i] % 2 == 1) result++;
-       result += array[i];
+        int max = array[i];
+        if (i > max) { max = i; }
+        return max;
     }
-    return result;
 }
-void print(int[] array)
+int FindMin(int[] array)
+{
+    foreach (int i in array)
+    {
+        int min = array[i];
+        if (i < min) { min = i; }
+        return min;
+    }
+}
+void Print(int[] array)
 {
     Console.WriteLine($"[{string.Join(",", array)}]");
 }
 
-int[] array = arrayInit(5);
-print(array);
-Console.WriteLine($"в указанном массиве сумма элементов на нечетных позициях = {diffMaxMinElement(array)}");
+int[] array = ArrayInit(5);
+Print(array);
+Console.WriteLine($"в указанном массиве максимальное значение {FindMax(array)} - минимальное {FindMin(array)} = {FindMax(array) - FindMin(array)}");
